@@ -28,9 +28,16 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
       ],
       rules: {
-        '@typescript-eslint/interface-name-prefix': [
+        '@typescript-eslint/naming-convention': [
           'error',
-          {prefixWithI: 'always', allowUnderscorePrefix: true},
+          {
+            selector: 'interface',
+            format: ['PascalCase'],
+            custom: {
+              regex: '^I[A-Z]',
+              match: true,
+            },
+          },
         ],
         '@typescript-eslint/camelcase': 'off',
       },
